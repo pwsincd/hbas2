@@ -21,20 +21,32 @@
     <div id="app">
       <!-- navbar -->
       <nav class="navBar">
-        [logo]
+        🏪 WiiuBru Appstore
         <ul class="navBar__links">
           <li>
-            <a href="https://kiwiirc.com/client/irc.kiwiirc.com/wiiubru">IRC</a>
+            <a href="https://kiwiirc.com/client/irc.kiwiirc.com/wiiubru"><i class="fa fa-comments-o" aria-hidden="true"></i> IRC</a>
           </li>
           <li>
-            <a href="http://forum.wiiubru.com">Forum</a>
+            <a href="http://forum.wiiubru.com"><i class="fa fa-forumbee" aria-hidden="true"></i> Forum</a>
           </li>
           <li>
-            <a href="http://www.wiiubru.com/appstore/stats/index.html">Stats</a>
+            <a href="https://twitter.com/WiiUbru"><i class="fa fa-twitter" aria-hidden="true"></i> Follow Us</a>
           </li>
           <li>
-            <a href="https://www.paypal.me/pwsincd">Donate</a>
+            <a href="http://www.wiiubru.com/appstore/stats/index.html"><i class="fa fa-line-chart" aria-hidden="true"></i> Stats</a>
           </li>
+          <li>
+            <a href="https://www.paypal.me/pwsincd"><i class="fa fa-paypal" aria-hidden="true"></i> Donate</a>
+          </li>
+           <li>
+            <a href="http://www.wiiubru.com/go"><i class="fa fa-arrow-right" aria-hidden="true"></i> GO</a>
+          </li>
+           <li>
+            <a href="https://www.gbatemp.net/forums/wii-u-tutorials.265/"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Tutorials</a>
+          </li>
+            <li>
+            <a href="http://www.wiiubru.com/rip"><i class="fa fa-thumbs-down" aria-hidden="true"></i> RIP</a>
+          </li> 
         </ul>
         <a class="mobileNavToggle" v-on:click="toggleSideMenu"><i class="fa fa-bars"></i></a>
       </nav>
@@ -57,18 +69,59 @@
               <span class="category__icon"><i :class="['fa', category.icon]"></i></span><span class="category__title">{{category.id}}</span>
             </router-link>
           </li>
+
         </ul>
+         <!--advertisement side of page
+         <div class = "adSpace">
+         <br>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:200px;height:200px"
+             data-ad-client="ca-pub-7623664678937879"
+             data-ad-slot="9058831412"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>        
+        </div> 
+        end of advertisement side of page-->
       </div>
       <!-- / side menu -->
       <!-- main page content -->
       <div class="main">
+        <!--advertisement top of page-->
+        <div align="center">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- wiiubru -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:70px"
+             data-ad-client="ca-pub-7623664678937879"
+             data-ad-slot="9058831412"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>        
+        </div>
+        <!--end of advertisement top of page-->
         <router-view></router-view>
-        <footer>&copy; 2016 wiiubru.com. Homebrew App Store webpage design &amp; code by <a href="https://github.com/jaames">Jaames</a></footer>
+        <!--advertisement bottom of page-->
+        <br>
+        <div align="center"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Wiiubru2 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:70px"
+             data-ad-client="ca-pub-8148658375496745"
+             data-ad-slot="1135708500"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+        <!--end of advertisement bottom of page-->
+        <footer>&copy; 2016 wiiubru.com. Powered by <a href="https://github.com/vgmoose/hbas">hbas</a> created &amp; coded by <a href="https://github.com/vgmoose/">Vgmoose.</a><br>Homebrew App Store webpage concept &amp; hosting by <a href="https://github.com/pwsincd">Pwsincd.</a>, design &amp; code by <a href="https://github.com/jaames">Jaames</a>
+        <br></footer>
       </div>
       <!-- / main page content -->
       <!-- advert space -->
       <div class="adSpace">
-        <!-- I've allowed the space for adverts here, dimensions should be 256px wide, whatever height you choose c: -->
       </div>
       <!-- advert space -->
     </div>
@@ -115,6 +168,13 @@
             <div class="app__action">
               <a v-bind:href="app.url" target="_blank" rel="noopener noreferrer" class="button button--block button--secondary">Source</a>
             </div>
+            <div><hr></div>
+            <div class="app__databody">
+              <div class="app__datatitle">Additional information</div>
+              <div class="app__data">Version: {{app.version}}</div>
+              <div class="app__data">Size: {{app.filesize}} Kbs</div>
+              <div class="app__data">Updated: {{app.updated}}</div>
+            </div>  
           </div>
         </div>
         <div class="rightSection">
@@ -183,7 +243,7 @@
             icon: "fa-lightbulb-o"
           },
         ],
-        appListURL: "demo/demo_apps.json",
+        appListURL: "directory.json",
         getAppImageURL: function (directory) {
           return "http://www.wiiubru.com/appstore/apps/" + directory + "/icon.png"
         },
@@ -196,3 +256,4 @@
     <script src="js/main.min.js"></script>
   </body>
 </html>
+
