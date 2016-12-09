@@ -88,7 +88,7 @@ var appList = {
                     t = new RegExp(decodeURI(e), "gi");
                 return {
                     items: this.$parent.appList.apps.filter(function(e) {
-                        var a = t.test(e.name) || t.test(e.long_desc) || t.test(e.authors);
+                        var a = t.test(e.name) || t.test(e.long_desc) || t.test(e.author);
                         return a && (e.img_src = config.getAppImageURL(e.directory)), a
                     })
                 }
