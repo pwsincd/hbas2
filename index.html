@@ -5,6 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homebrew App Store</title>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
@@ -41,10 +43,10 @@
            <li>
             <a href="http://www.wiiubru.com/go"><i class="fa fa-arrow-right" aria-hidden="true"></i> GO</a>
           </li>
-           <li>
+ <!--          <li>
             <a href="https://www.gbatemp.net/forums/wii-u-tutorials.265/"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Tutorials</a>
-          </li>
-            <li>
+          </li>          -->
+            <li> 
             <a href="http://www.wiiubru.com/rip"><i class="fa fa-thumbs-down" aria-hidden="true"></i> RIP</a>
           </li> 
         </ul>
@@ -168,12 +170,15 @@
             <div class="app__action">
               <a v-bind:href="app.url" target="_blank" rel="noopener noreferrer" class="button button--block button--secondary">Source</a>
             </div>
-            <div><hr></div>
+            <div>&nbsp;</div>
             <div class="app__databody">
               <div class="app__datatitle">Additional information</div>
               <div class="app__data">Version: {{app.version}}</div>
               <div class="app__data">Size: {{app.filesize}} Kbs</div>
               <div class="app__data">Updated: {{app.updated}}</div>
+              <div class="app__datatitle">Weekly Download Stats</div>
+              <div class="app__data">Web Downloads: {{app.web_hits}}</div>
+              <div class="app__data">App Downloads: {{app.app_hits}}</div>
             </div>  
           </div>
         </div>
@@ -248,7 +253,7 @@
           return "http://www.wiiubru.com/appstore/apps/" + directory + "/icon.png"
         },
         getAppDownloadURL: function (directory, binary) {
-          return "http://www.wiiubru.com/appstore/zips/" + directory + ".zip"
+          return "/appstore/zips/" + directory + ".zip"
         },
       };
     </script>
@@ -256,4 +261,3 @@
     <script src="js/main.min.js"></script>
   </body>
 </html>
-
